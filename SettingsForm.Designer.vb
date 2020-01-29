@@ -23,6 +23,7 @@ Partial Class SettingsForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SettingsForm))
         Me.CheckBoxMaster = New System.Windows.Forms.CheckBox()
         Me.CheckBoxCommon = New System.Windows.Forms.CheckBox()
         Me.ButtonManage = New System.Windows.Forms.Button()
@@ -83,6 +84,7 @@ Partial Class SettingsForm
         Me.Controls.Add(Me.ButtonManage)
         Me.Controls.Add(Me.CheckBoxCommon)
         Me.Controls.Add(Me.CheckBoxMaster)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximumSize = New System.Drawing.Size(275, 140)
         Me.MinimumSize = New System.Drawing.Size(275, 140)
         Me.Name = "SettingsForm"

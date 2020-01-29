@@ -22,6 +22,7 @@ Partial Class ManageTargetInterface
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManageTargetInterface))
         Me.ListBoxRef = New System.Windows.Forms.ListBox()
         Me.ButtonRemove = New System.Windows.Forms.Button()
         Me.ButtonOK = New System.Windows.Forms.Button()
@@ -29,8 +30,8 @@ Partial Class ManageTargetInterface
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.ButtonAdd = New System.Windows.Forms.Button()
-        Me.ListBoxTarget = New System.Windows.Forms.ListBox()
         Me.ButtonDefault = New System.Windows.Forms.Button()
+        Me.ListBoxTarget = New System.Windows.Forms.ListBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
@@ -130,6 +131,15 @@ Partial Class ManageTargetInterface
         Me.ButtonAdd.Text = ">>"
         Me.ButtonAdd.UseVisualStyleBackColor = True
         '
+        'ButtonDefault
+        '
+        Me.ButtonDefault.Location = New System.Drawing.Point(3, 73)
+        Me.ButtonDefault.Name = "ButtonDefault"
+        Me.ButtonDefault.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonDefault.TabIndex = 6
+        Me.ButtonDefault.Text = "Default"
+        Me.ButtonDefault.UseVisualStyleBackColor = True
+        '
         'ListBoxTarget
         '
         Me.ListBoxTarget.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -142,15 +152,6 @@ Partial Class ManageTargetInterface
         Me.ListBoxTarget.Size = New System.Drawing.Size(425, 563)
         Me.ListBoxTarget.TabIndex = 3
         '
-        'ButtonDefault
-        '
-        Me.ButtonDefault.Location = New System.Drawing.Point(3, 73)
-        Me.ButtonDefault.Name = "ButtonDefault"
-        Me.ButtonDefault.Size = New System.Drawing.Size(75, 23)
-        Me.ButtonDefault.TabIndex = 6
-        Me.ButtonDefault.Text = "Default"
-        Me.ButtonDefault.UseVisualStyleBackColor = True
-        '
         'ManageTargetInterface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -158,6 +159,7 @@ Partial Class ManageTargetInterface
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(975, 597)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ManageTargetInterface"
         Me.Text = "Manage target language"
         Me.TableLayoutPanel1.ResumeLayout(False)
