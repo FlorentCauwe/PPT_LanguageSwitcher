@@ -241,7 +241,9 @@
     <None Include="Resources\languageswitch.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Changelog.txt" />
+    <Content Include="Changelog.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\settings.png" />
   </ItemGroup>
   <PropertyGroup>
