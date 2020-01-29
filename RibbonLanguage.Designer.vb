@@ -44,10 +44,11 @@
         Me.Tab1 = Me.Factory.CreateRibbonTab
         Me.Group1 = Me.Factory.CreateRibbonGroup
         Me.DropDownLanguage = Me.Factory.CreateRibbonDropDown
-        Me.CheckBox1 = Me.Factory.CreateRibbonCheckBox
         Me.ButtonManage = Me.Factory.CreateRibbonButton
-        Me.ButtonSwitch = Me.Factory.CreateRibbonButton
+        Me.CheckBox1 = Me.Factory.CreateRibbonCheckBox
         Me.ButtonAbout = Me.Factory.CreateRibbonButton
+        Me.ButtonSettings = Me.Factory.CreateRibbonButton
+        Me.ButtonSwitch = Me.Factory.CreateRibbonButton
         Me.Tab1.SuspendLayout()
         Me.Group1.SuspendLayout()
         Me.SuspendLayout()
@@ -62,10 +63,11 @@
         'Group1
         '
         Me.Group1.Items.Add(Me.DropDownLanguage)
+        Me.Group1.Items.Add(Me.ButtonSettings)
+        Me.Group1.Items.Add(Me.ButtonAbout)
+        Me.Group1.Items.Add(Me.ButtonSwitch)
         Me.Group1.Items.Add(Me.ButtonManage)
         Me.Group1.Items.Add(Me.CheckBox1)
-        Me.Group1.Items.Add(Me.ButtonSwitch)
-        Me.Group1.Items.Add(Me.ButtonAbout)
         Me.Group1.Label = "Languages"
         Me.Group1.Name = "Group1"
         '
@@ -74,15 +76,33 @@
         Me.DropDownLanguage.Label = "Target"
         Me.DropDownLanguage.Name = "DropDownLanguage"
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.Label = "Change master"
-        Me.CheckBox1.Name = "CheckBox1"
-        '
         'ButtonManage
         '
+        Me.ButtonManage.Enabled = False
         Me.ButtonManage.Label = "Manage languages list"
         Me.ButtonManage.Name = "ButtonManage"
+        Me.ButtonManage.Visible = False
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.Enabled = False
+        Me.CheckBox1.Label = "Change master"
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Visible = False
+        '
+        'ButtonAbout
+        '
+        Me.ButtonAbout.Label = "About..."
+        Me.ButtonAbout.Name = "ButtonAbout"
+        Me.ButtonAbout.OfficeImageId = "About"
+        Me.ButtonAbout.ShowImage = True
+        '
+        'ButtonSettings
+        '
+        Me.ButtonSettings.Image = Global.PPT_LanguageSwitcher.My.Resources.Resources.settings
+        Me.ButtonSettings.Label = "Settings"
+        Me.ButtonSettings.Name = "ButtonSettings"
+        Me.ButtonSettings.ShowImage = True
         '
         'ButtonSwitch
         '
@@ -91,13 +111,6 @@
         Me.ButtonSwitch.Label = "Switch Language"
         Me.ButtonSwitch.Name = "ButtonSwitch"
         Me.ButtonSwitch.ShowImage = True
-        '
-        'ButtonAbout
-        '
-        Me.ButtonAbout.Label = "About..."
-        Me.ButtonAbout.Name = "ButtonAbout"
-        Me.ButtonAbout.OfficeImageId = "About"
-        Me.ButtonAbout.ShowImage = True
         '
         'RibbonLanguage
         '
@@ -119,6 +132,7 @@
     Friend WithEvents ButtonSwitch As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents ButtonManage As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents CheckBox1 As Microsoft.Office.Tools.Ribbon.RibbonCheckBox
+    Friend WithEvents ButtonSettings As Microsoft.Office.Tools.Ribbon.RibbonButton
 End Class
 
 Partial Class ThisRibbonCollection

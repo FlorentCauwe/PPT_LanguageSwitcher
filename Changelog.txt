@@ -1,4 +1,6 @@
-﻿1.0.0
+﻿1.0.1
+	* use a setting button to gather all the options
+1.0.0
 	* First release
 	* Target languages in a list
 	* Button to switch language

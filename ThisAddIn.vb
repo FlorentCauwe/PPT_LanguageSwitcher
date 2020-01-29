@@ -16,20 +16,20 @@ Public Class ThisAddIn
 
         Dim sld As PPT.Slide
         'Dim shp As PPT.Shape
-
-        For Each sld In Me.Application.ActivePresentation.Slides
-            ShapesCollectionLanguageChange(sld.Shapes, LanguageID)
-            ShapesCollectionLanguageChange(sld.NotesPage.Shapes, LanguageID)
-            'System.Diagnostics.Debug.WriteLine(sld.SlideID)
-        Next
+        If Globals.Ribbons.RibbonLanguage.TargetSlides = True Then
+            For Each sld In Me.Application.ActivePresentation.Slides
+                ShapesCollectionLanguageChange(sld.Shapes, LanguageID)
+                ShapesCollectionLanguageChange(sld.NotesPage.Shapes, LanguageID)
+                'System.Diagnostics.Debug.WriteLine(sld.SlideID)
+            Next
+        End If
         'slide Master
-
-        Dim ChangeMaster As Boolean = Globals.Ribbons.RibbonLanguage.CheckBox1.Checked
-        If ChangeMaster = False Then Exit Sub
-        ShapesCollectionLanguageChange(Me.Application.ActivePresentation.SlideMaster.Shapes, LanguageID)
-        For Each layout As PPT.CustomLayout In Me.Application.ActivePresentation.SlideMaster.CustomLayouts
-            ShapesCollectionLanguageChange(layout.Shapes, LanguageID)
-        Next
+        If Globals.Ribbons.RibbonLanguage.TargetMaster = True Then
+            ShapesCollectionLanguageChange(Me.Application.ActivePresentation.SlideMaster.Shapes, LanguageID)
+            For Each layout As PPT.CustomLayout In Me.Application.ActivePresentation.SlideMaster.CustomLayouts
+                ShapesCollectionLanguageChange(layout.Shapes, LanguageID)
+            Next
+        End If
 
     End Sub
     Private Sub ShapesCollectionLanguageChange(ShapesCollection As PPT.Shapes, LanguageID As Integer)

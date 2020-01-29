@@ -189,6 +189,12 @@
     <Compile Include="RibbonLanguage.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="SettingsForm.Designer.vb">
+      <DependentUpon>SettingsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ThisAddIn.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RibbonLanguage.resx">
       <DependentUpon>RibbonLanguage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="PPT_LanguageSwitcher_TemporaryKey.pfx" />
@@ -233,6 +242,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Changelog.txt" />
+    <None Include="Resources\settings.png" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

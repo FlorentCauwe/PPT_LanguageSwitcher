@@ -3,6 +3,8 @@ Imports Microsoft.Office.Core
 
 Public Class RibbonLanguage
     Public Property IdListInteger As List(Of Integer)
+    Public TargetSlides As Boolean = True
+    Public TargetMaster As Boolean = True
 
     Private Sub RibbonLanguage_Load(ByVal sender As System.Object, ByVal e As RibbonUIEventArgs) Handles MyBase.Load
         'add the language entries to the drop down list
@@ -46,7 +48,7 @@ Public Class RibbonLanguage
             DropDownLanguage.SelectedItemIndex = indexOfLanguage
         End If
     End Sub
-    Private Sub AddLanguage(LanguageID As MsoLanguageID)
+    Public Sub AddLanguage(LanguageID As MsoLanguageID)
         Dim DropDownItem As RibbonDropDownItem = Globals.Factory.GetRibbonFactory.CreateRibbonDropDownItem()
         Dim fullName = LanguageID.ToString()
         DropDownItem.Label = Right(fullName, fullName.Length - 13) 'prefix msoLanguageID --> 13 letters
@@ -81,10 +83,15 @@ Public Class RibbonLanguage
         DropDownLanguage.Items.Clear()
         IdListInteger.ForEach(Sub(i) AddLanguage(i))
     End Sub
-    Private Function ListToString(InputList As List(Of Integer)) As String
+    Public Function ListToString(InputList As List(Of Integer)) As String
         Dim result As String = ""
         InputList.ForEach(Sub(i) result += i & ";")
         result = result.Remove(result.Length - 1)
         Return result
     End Function
+
+    Private Sub ButtonSettings_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonSettings.Click
+        Dim SettingsForm As New SettingsForm
+        SettingsForm.ShowDialog()
+    End Sub
 End Class
