@@ -1,0 +1,11 @@
+﻿1.0.0
+	* First release
+	* Target languages in a list
+	* Button to switch language
+	* About button
+	* Language list stored as integer list in app setting
+	* target every shape and NotesPage.shapes of everyslide
+	* select the language using the first language found in the document
+	* eventually add the first language found in the document to the list of target language
+	* Manage target languages button to add or remove languages to the target list
+	* Save the target language as user setting
