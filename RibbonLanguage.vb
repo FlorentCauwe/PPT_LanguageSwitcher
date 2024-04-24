@@ -5,6 +5,7 @@ Public Class RibbonLanguage
     Public Property IdListInteger As List(Of Integer)
     Public TargetSlides As Boolean = True
     Public TargetMaster As Boolean = True
+    Public TargetElement As SwitchTarget = SwitchTarget.Presentation
 
     Private Sub RibbonLanguage_Load(ByVal sender As System.Object, ByVal e As RibbonUIEventArgs) Handles MyBase.Load
         'add the language entries to the drop down list
@@ -56,21 +57,20 @@ Public Class RibbonLanguage
         DropDownItem.Tag = CInt(LanguageID)
         DropDownLanguage.Items.Add(DropDownItem)
     End Sub
-
     Private Sub ButtonSwitch_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonSwitch.Click
         'get language id from dropdown list
         Dim currentLanguageId As Integer = DropDownLanguage.SelectedItem.Tag
         'change language
-        Globals.ThisAddIn.LanguageChange(currentLanguageId)
+        Globals.ThisAddIn.LanguageChange(currentLanguageId, TargetElement)
     End Sub
 
     Private Sub ButtonAbout_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonAbout.Click
-        Dim Message As String = "This Add-in allows you to switch the language for a complete document." & vbNewLine & "Select a language in the drop down list and click on the button Switch language. Done!"
+        Dim Message As String = "This Add-in allows you to switch the language for the current slide or the complete document." & vbNewLine & "Select a language in the drop down list and click on the button Switch language. Done!"
         Message += vbNewLine & "Version: " & My.Application.Info.Version.ToString()
         MsgBox(Message, vbQuestion, "About PPT_LanguageSwitcher")
     End Sub
 
-    Private Sub ButtonManage_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonManage.Click
+    Private Sub ButtonManage_Click(sender As Object, e As RibbonControlEventArgs)
         Dim TargetSelection As New ManageTargetInterface
         TargetSelection.ShowDialog()
         If TargetSelection.DialogResult <> Windows.Forms.DialogResult.OK Then Exit Sub
@@ -93,5 +93,23 @@ Public Class RibbonLanguage
     Private Sub ButtonSettings_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonSettings.Click
         Dim SettingsForm As New SettingsForm
         SettingsForm.ShowDialog()
+    End Sub
+
+    Private Sub CB_Presentation_Click(sender As Object, e As RibbonControlEventArgs) Handles CB_Presentation.Click
+        CB_Slide.Checked = Not (CB_Presentation.Checked)
+        CB_Selection.Checked = Not (CB_Presentation.Checked)
+        TargetElement = SwitchTarget.Presentation
+    End Sub
+
+    Private Sub CB_Slide_Click(sender As Object, e As RibbonControlEventArgs) Handles CB_Slide.Click
+        CB_Presentation.Checked = Not (CB_Slide.Checked)
+        CB_Selection.Checked = Not (CB_Slide.Checked)
+        TargetElement = SwitchTarget.Current
+    End Sub
+
+    Private Sub CB_Selection_Click(sender As Object, e As RibbonControlEventArgs) Handles CB_Selection.Click
+        CB_Presentation.Checked = Not (CB_Selection.Checked)
+        CB_Slide.Checked = Not (CB_Selection.Checked)
+        TargetElement = SwitchTarget.Selection
     End Sub
 End Class

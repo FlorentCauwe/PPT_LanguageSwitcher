@@ -1,0 +1,99 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PPT_LanguageSwitcher
+</name>
+</assembly>
+<members>
+<member name="T:PPT_LanguageSwitcher.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:PPT_LanguageSwitcher.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:PPT_LanguageSwitcher.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:PPT_LanguageSwitcher.My.Resources.Resources.languageswitch">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PPT_LanguageSwitcher.My.Resources.Resources.settings">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:PPT_LanguageSwitcher.ThisRibbonCollection">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisRibbonCollection.#ctor(Microsoft.Office.Tools.Ribbon.RibbonFactory)">
+
+</member>
+<member name="T:PPT_LanguageSwitcher.ThisAddIn">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.#ctor(Microsoft.Office.Tools.Factory,System.IServiceProvider)">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.Initialize">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.FinishInitialization">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.InitializeDataBindings">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.InitializeCachedData">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.InitializeData">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.BindToData">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.StartCaching(System.String)">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.StopCaching(System.String)">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.IsCached(System.String)">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.BeginInitialization">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.EndInitialization">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.InitializeControls">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.InitializeComponents">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.NeedsFill(System.String)">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.ThisAddIn.OnShutdown">
+
+</member>
+<member name="T:PPT_LanguageSwitcher.Globals">
+
+</member>
+<member name="M:PPT_LanguageSwitcher.Globals.#ctor">
+
+</member>
+</members>
+</doc>

@@ -14,7 +14,7 @@ Imports System.Security
 <Assembly: AssemblyDescription("Switch easily the language in PowerPoint presentation")>
 <Assembly: AssemblyCompany("EMAG")>
 <Assembly: AssemblyProduct("PPT_LanguageSwitcher")>
-<Assembly: AssemblyCopyright("Florent Cauwe Copyright ©  2020")>
+<Assembly: AssemblyCopyright("Florent Cauwe Copyright ©  2024")>
 <Assembly: AssemblyTrademark("")>
 
 ' Setting ComVisible to false makes the types in this assembly not visible 
@@ -36,8 +36,8 @@ Imports System.Security
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.1.0")>
-<Assembly: AssemblyFileVersion("1.0.1.0")>
+<Assembly: AssemblyVersion("1.0.4.0")>
+<Assembly: AssemblyFileVersion("1.0.4.0")>
 <Assembly: NeutralResourcesLanguage("en")>
 Friend Module DesignTimeConstants
     Public Const RibbonTypeSerializer As String = "Microsoft.VisualStudio.Tools.Office.Ribbon.Serialization.RibbonTypeCodeDomSerializer, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"

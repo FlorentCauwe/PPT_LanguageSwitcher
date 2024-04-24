@@ -44,11 +44,12 @@
         Me.Tab1 = Me.Factory.CreateRibbonTab
         Me.Group1 = Me.Factory.CreateRibbonGroup
         Me.DropDownLanguage = Me.Factory.CreateRibbonDropDown
-        Me.ButtonManage = Me.Factory.CreateRibbonButton
-        Me.CheckBox1 = Me.Factory.CreateRibbonCheckBox
-        Me.ButtonAbout = Me.Factory.CreateRibbonButton
         Me.ButtonSettings = Me.Factory.CreateRibbonButton
+        Me.ButtonAbout = Me.Factory.CreateRibbonButton
         Me.ButtonSwitch = Me.Factory.CreateRibbonButton
+        Me.CB_Presentation = Me.Factory.CreateRibbonCheckBox
+        Me.CB_Slide = Me.Factory.CreateRibbonCheckBox
+        Me.CB_Selection = Me.Factory.CreateRibbonCheckBox
         Me.Tab1.SuspendLayout()
         Me.Group1.SuspendLayout()
         Me.SuspendLayout()
@@ -65,37 +66,17 @@
         Me.Group1.Items.Add(Me.DropDownLanguage)
         Me.Group1.Items.Add(Me.ButtonSettings)
         Me.Group1.Items.Add(Me.ButtonAbout)
+        Me.Group1.Items.Add(Me.CB_Presentation)
+        Me.Group1.Items.Add(Me.CB_Slide)
+        Me.Group1.Items.Add(Me.CB_Selection)
         Me.Group1.Items.Add(Me.ButtonSwitch)
-        Me.Group1.Items.Add(Me.ButtonManage)
-        Me.Group1.Items.Add(Me.CheckBox1)
         Me.Group1.Label = "Languages"
         Me.Group1.Name = "Group1"
         '
         'DropDownLanguage
         '
-        Me.DropDownLanguage.Label = "Target"
+        Me.DropDownLanguage.Label = "Switch to"
         Me.DropDownLanguage.Name = "DropDownLanguage"
-        '
-        'ButtonManage
-        '
-        Me.ButtonManage.Enabled = False
-        Me.ButtonManage.Label = "Manage languages list"
-        Me.ButtonManage.Name = "ButtonManage"
-        Me.ButtonManage.Visible = False
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.Enabled = False
-        Me.CheckBox1.Label = "Change master"
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Visible = False
-        '
-        'ButtonAbout
-        '
-        Me.ButtonAbout.Label = "About..."
-        Me.ButtonAbout.Name = "ButtonAbout"
-        Me.ButtonAbout.OfficeImageId = "About"
-        Me.ButtonAbout.ShowImage = True
         '
         'ButtonSettings
         '
@@ -104,6 +85,13 @@
         Me.ButtonSettings.Name = "ButtonSettings"
         Me.ButtonSettings.ShowImage = True
         '
+        'ButtonAbout
+        '
+        Me.ButtonAbout.Label = "About..."
+        Me.ButtonAbout.Name = "ButtonAbout"
+        Me.ButtonAbout.OfficeImageId = "About"
+        Me.ButtonAbout.ShowImage = True
+        '
         'ButtonSwitch
         '
         Me.ButtonSwitch.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
@@ -111,6 +99,25 @@
         Me.ButtonSwitch.Label = "Switch Language"
         Me.ButtonSwitch.Name = "ButtonSwitch"
         Me.ButtonSwitch.ShowImage = True
+        '
+        'CB_Presentation
+        '
+        Me.CB_Presentation.Checked = True
+        Me.CB_Presentation.Label = "Presentation"
+        Me.CB_Presentation.Name = "CB_Presentation"
+        Me.CB_Presentation.ScreenTip = "switch for the whole presentation"
+        '
+        'CB_Slide
+        '
+        Me.CB_Slide.Label = "Current slide"
+        Me.CB_Slide.Name = "CB_Slide"
+        Me.CB_Slide.ScreenTip = "switch only the current slide"
+        '
+        'CB_Selection
+        '
+        Me.CB_Selection.Label = "Selected slides"
+        Me.CB_Selection.Name = "CB_Selection"
+        Me.CB_Selection.ScreenTip = "switch for the selected slides"
         '
         'RibbonLanguage
         '
@@ -130,9 +137,10 @@
     Friend WithEvents DropDownLanguage As Microsoft.Office.Tools.Ribbon.RibbonDropDown
     Friend WithEvents ButtonAbout As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents ButtonSwitch As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents ButtonManage As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents CheckBox1 As Microsoft.Office.Tools.Ribbon.RibbonCheckBox
     Friend WithEvents ButtonSettings As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents CB_Presentation As Microsoft.Office.Tools.Ribbon.RibbonCheckBox
+    Friend WithEvents CB_Slide As Microsoft.Office.Tools.Ribbon.RibbonCheckBox
+    Friend WithEvents CB_Selection As Microsoft.Office.Tools.Ribbon.RibbonCheckBox
 End Class
 
 Partial Class ThisRibbonCollection
